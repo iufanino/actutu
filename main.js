@@ -95,22 +95,41 @@ afficheRecommandation()  */
 
  
 
-/*function afficheLivres(livreRand) {
+/*function afficheLivre(livreRand) {
     document.getElementById('articles').innerHTML = '';
     for (let troisLivres of livreRand) {
         let noeudLivres = document.createElement('p');
-        noeudLivres.classList.add('livresJS');
+        noeudLivres.classList.add('livres');
         noeudLivres.innerText = troisLivres;
         document.getElementById('articles').appendChild(noeudLivres);
     }
 }  */
 
+/*let prixMax = 20;
+tableauLivre.forEach(function(tableauLivre){
+        if (tableauLivre.prix <= prixMax){
+           console.log(tableauLivre); 
+        } 
+    })  */
+  
 
-
-let prixMax = 20;
-tableauLivre.forEach(function afficheLivres(prixMax) {
+/*let prixMax = 20;
+function afficheLivres(prixMax){ 
+tableauLivre.forEach(function (tableauLivre) {
         if (tableauLivre.prix <= prixMax) {
            console.log(tableauLivre); 
         }
      }
-    )
+    )}
+afficheLivres(prixMax)   */
+
+ 
+/*function afficheLivres(prixMax) {
+    tableauLivre.forEach(function(tableauLivre) {
+            if (tableauLivre.prix <= prixMax) {
+               console.log(tableauLivre); 
+            }
+         }
+        )
+    }
+afficheLivres(20);    */
