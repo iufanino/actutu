@@ -5,142 +5,190 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
     integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/style.css">
   <title>Actutu</title>
 </head>
+
 <body>
+
   <header id="header1">
+
      <nav id="navbar">
+
         <div id="nav1">
           <ul>
-            <li><a href="page-html/accueil.html">Accueil</a></li>
-            <li><a href="page-html/rechercher.html">Rechercher</a></li>
-            <li><a href="page-html/apropos.html">A propos</a></li>
+            <li><a href="pages/accueil.html">Accueil</a></li>
+            <li><a href="pages/rechercher.html">Rechercher</a></li>
+            <li><a href="pages/apropos.html">A propos</a></li>
           </ul>
         </div>
+
         <a href="#" id="burger">
+
           <span class="menu"></span>
           <span class="menu"></span>
           <span class="menu"></span>
         </a>
+
         <div id="nav2">
           <ul>
-            <li><a href="page-html/seconnecter.html">Se connecter</a></li>
-            <li><a href="page-html/inscrire.html">S'inscrire</a></li>
+            <li><a href="pages/seconnecter.html">Se connecter</a></li>
+            <li><a href="pages/inscrire.html">S'inscrire</a></li>
           </ul>
         </div>
+
      </nav>
-        <img id="logo" src="actutu.image/logo.svg" alt="Logo de la page">
-        <h1>Actutu</h1>
-        <p>Toute l'actualité du livre</p>
-        <input type="text" placeholder=" Rechercher un livre" name="rechercher" id="rechercher">
-        <button type="submit" id="buttongo">Go</button>
+
+      <img id="logo" src="images/logo.svg" alt="Logo de la page">
+      <h1>Actutu</h1>
+      <p>Toute l'actualité du livre</p>
+
+      <form id="form">
+          <label for="search">Rechercher un livre</label>
+          <input type="search" name="rechercher" id="rechercher" value="">
+          <button  value="rechercher" id="buttongo">Go</button>
+      </form>  
+
   </header>
+
+  <main>
+
   <section>
+
      <header id="header2">
-        <img class="iconelivre" src="actutu.image/livre-jaune.svg" alt="icone de petit livre jaune">
+        <img class="iconelivre" src="images/livre-jaune.svg" alt="icone de petit livre jaune">
         <h2>Recommandations</h2>
      </header>
+
        <div id="articles">
+
          <article>
-           <img id="imagelivre" src="actutu.image/image-fleure.svg" alt="image de livre avec des fleures">
-           <h4>Learning ECMAScript 6<span><br>Narayan Prusty</span></h4>
-           <p>27.42€</p>
+           <img class="image" id="imagelivre" src="images/image-fleure.svg" alt="image de livre avec des fleures">
+           <h4 class="titre">Learning ECMAScript 6</h4>
+           <p class="auteur">Narayan Prusty</p>
+           <p class="prix">27.42€</p>
          </article>
+
          <article>
-           <img src="actutu.image/image-vert.svg" alt="image de livre vert">
-           <h4>Learning ECMAScript<span><br>Narayan Prusty</span></h4>
-           <p>18.99€</p>
+           <img class="image" src="images/image-vert.svg" alt="image de livre vert">
+           <h4 class="titre">Learning ECMAScript<span class="auteur"><br>Narayan Prusty</span></h4>
+           <p class="prix">18.99€</p>
          </article>
+
          <article id="article3">
-           <img  src="actutu.image/image-rouge.svg" alt="image de livre rouge">
-           <h4>ECMAScript Cookbook<span><br>Ross Harrison</span></h4>
-           <p>19.99€</p>
+           <img class="image" src="images/image-rouge.svg" alt="image de livre rouge">
+           <h4 class="titre">ECMAScript Cookbook<span class="auteur"><br>Ross Harrison</span></h4>
+           <p class="prix">19.99€</p>
          </article>
+
        </div>
+
   </section>
+
   <section>
+
      <header id="header3">
-        <img class="iconelivre" src="actutu.image/livre-bleu.svg" alt="icone de petit livre bleu">
+        <img class="iconelivre" src="images/livre-bleu.svg" alt="icone de petit livre bleu">
         <h2>Les livres à moins de <span> 20€</span></h2>
       </header>
+
       <div id="articles2">
+
          <article>
-            <img src="actutu.image/image-fleure.svg" alt="image de livre avec des fleures">
-            <h4>Learning ECMAScript 6<span><br>Narayan Prusty</span></h4>
+            <img class="image" src="images/image-fleure.svg" alt="image de livre avec des fleures">
+            <h4 class="titre">Learning ECMAScript 6<span class="auteur"><br>Narayan Prusty</span></h4>
             <p class="prix">27.42€</p>
             <p class="text">Learn all the new ES6 features and be amongst the most prominent JavaScript developers 
                             who can write efficient JS<br>programs as per the latest standards! About This Book
                             Learn a powerful approach to writing object-oriented JavaScript<br>code using ES6 
                             Create and use ES6 modules to learn to write smart, modularized JavaScript code</p>
          </article>
+
          <article>
-            <img src="actutu.image/image-fleure.svg" alt="image de livre avec des fleures">
-            <h4>Learning ECMAScript 6<span><br>Narayan Prusty</span></h4>
+            <img class="image" src="images/image-fleure.svg" alt="image de livre avec des fleures">
+            <h4 class="titre">Learning ECMAScript 6<span class="auteur"><br>Narayan Prusty</span></h4>
             <p class="prix">27.42€</p>
             <p class="text">Learn all the new ES6 features and be amongst the most prominent JavaScript developers 
                             who can write efficient JS<br>programs as per the latest standards! About This Book
                             Learn a powerful approach to writing object-oriented JavaScript<br>code using ES6 
                             Create and use ES6 modules to learn to write smart, modularized JavaScript code</p>
          </article>
+
          <article>
-            <img src="actutu.image/image-fleure.svg" alt="image de livre avec des fleures">
-            <h4>Learning ECMAScript 6<span><br>Narayan Prusty</span></h4>
+            <img class="image" src="images/image-fleure.svg" alt="image de livre avec des fleures">
+            <h4 class="titre">Learning ECMAScript 6<span class="auteur"><br>Narayan Prusty</span></h4>
             <p class="prix">27.42€</p>
             <p class="text">Learn all the new ES6 features and be amongst the most prominent JavaScript developers 
                             who can write efficient JS<br>programs as per the latest standards! About This Book
                             Learn a powerful approach to writing object-oriented JavaScript<br>code using ES6 
                             Create and use ES6 modules to learn to write smart, modularized JavaScript code</p>
          </article>
+
          <article>
-            <img src="actutu.image/image-fleure.svg" alt="image de livre avec des fleures">
-            <h4>Learning ECMAScript 6<span><br>Narayan Prusty</span></h4>
+            <img class="image" src="images/image-fleure.svg" alt="image de livre avec des fleures">
+            <h4 class="titre">Learning ECMAScript 6<span class="auteur"><br>Narayan Prusty</span></h4>
             <p class="prix">27.42€</p>
             <p class="text">Learn all the new ES6 features and be amongst the most prominent JavaScript developers 
                             who can write efficient JS<br>programs as per the latest standards! About This Book
                             Learn a powerful approach to writing object-oriented JavaScript<br>code using ES6 
                             Create and use ES6 modules to learn to write smart, modularized JavaScript code</p>
          </article>
+
          <article>
-            <img src="actutu.image/image-fleure.svg" alt="image de livre avec des fleures">
-            <h4>Learning ECMAScript 6<span><br>Narayan Prusty</span></h4>
+            <img class="image" src="images/image-fleure.svg" alt="image de livre avec des fleures">
+            <h4 class="titre">Learning ECMAScript 6<span class="auteur"><br>Narayan Prusty</span></h4>
             <p class="prix" >27.42€</p>
             <p class="text">Learn all the new ES6 features and be amongst the most prominent JavaScript developers 
                             who can write efficient JS<br>programs as per the latest standards! About This Book
                             Learn a powerful approach to writing object-oriented JavaScript<br>code using ES6 
                             Create and use ES6 modules to learn to write smart, modularized JavaScript code</p>
          </article>
+
       </div>
+
   </section>
+
+  </main>
+
   <footer>
-      <img src="actutu.image/logo-blanc.svg" alt="logo blanc">
+      <img src="images/logo-blanc.svg" alt="logo blanc">
       <h2>Toutes les ressources du site</h2>
+
       <ul>
-          <li><a href="page-html/accueil.html">Page d'accueil</a>
+
+          <li><a href="pages/accueil.html">Page d'accueil</a>
               <ul>
-                <li><a href="page-html/livrespapier.html">Livres papier</a></li>
-                <li><a href="page-html/ebooks.html">Ebooks / Epubs</a></li>
-                <li><a href="page-html/livresaudio.html">Livres audio</a></li>
+                <li><a href="pages/livrespapier.html">Livres papier</a></li>
+                <li><a href="pages/ebooks.html">Ebooks / Epubs</a></li>
+                <li><a href="pages/livresaudio.html">Livres audio</a></li>
               </ul>
           </li>
-          <li><a href="page-html/policier.html">Policier</a>
+
+          <li><a href="pages/policier.html">Policier</a>
               <ul>
-                <li><a href="page-html/sceincefiction.html">Science Fiction</a></li>
-                <li><a href="page-html/frisson.html">Frisson</a></li>
-                <li><a href="page-html/médiéval.html">Médiéval</a></li>
-                <li><a href="page-html/touteslescatégories.html"><i class="fas fa-chevron-right"></i> Toutes les catégories</a></li>
+                <li><a href="pages/sceincefiction.html">Science Fiction</a></li>
+                <li><a href="pages/frisson.html">Frisson</a></li>
+                <li><a href="pages/médiéval.html">Médiéval</a></li>
+                <li><a href="pages/touteslescatégories.html"><i class="fas fa-chevron-right"></i> Toutes les catégories</a></li>
               </ul>
           </li>
-          <li id="promotions"><a href="page-html/promotions.html">Promotions</a>
+
+          <li id="promotions"><a href="pages/promotions.html">Promotions</a>
               <ul>
-                <li><a href="page-html/livresasortir.html">Livres à paraitre prochainement</a></li>
-                <li><a href="page-html/meilleuresventes.html">Meilleures ventes</a></li>
-                <li><a href="page-html/incontournables.html">Incontournables</a></li>
-                <li><a href="page-html/bonsplans.html"><i class="fa fa-chevron-right"></i> Tous les bons plans</a></li>
+                <li><a href="pages/livresasortir.html">Livres à paraitre prochainement</a></li>
+                <li><a href="pages/meilleuresventes.html">Meilleures ventes</a></li>
+                <li><a href="pages/incontournables.html">Incontournables</a></li>
+                <li><a href="pages/bonsplans.html"><i class="fa fa-chevron-right"></i> Tous les bons plans</a></li>
               </ul>
           </li>   
+
       </ul>
+
   </footer>
-  <script src="main.js"></script>
-</body>
+
+  <script src="scripts/main.js"></script>
+  <script src="scripts/index.js"></script>
+
+ </body>
+
 </html>

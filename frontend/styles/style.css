@@ -6,10 +6,9 @@
 }
 
 /*Navbar*/
+
 #header1{
     border-top: 8px solid #4a3174;
-    margin-top: 0;
-    margin-left: 0;
     height: 200px;
     width: 100%;
     position: relative;
@@ -71,10 +70,9 @@ list-style: none;
     background-color: #4a3174;
     border-radius: 10px;
 }
-/*Fin de navbar*/
-
 
 /*Header  ( logo, H1, P ) */
+    
 #logo{
     width: 138px;
     height: 73px;
@@ -106,6 +104,26 @@ list-style: none;
     position: relative;
     top: -310px;
 }
+#form{
+    position: relative;
+    display: flex;
+    width: 5%;
+}
+#form label{
+    position: absolute;
+    z-index: 1;
+    transform: translateY(-50%);
+    padding-left: 15px;
+    transition: all 0.3 ease-in;
+    color: #4A3174;
+    top: -358px;
+    left: 830px;
+    width: 150px;
+}
+#form:focus-within label, #form.active-input label{
+    top: -400px;
+    padding-left: 5px;
+}
 #rechercher{
     color: #9d9d9d;
     background-color: #ffffff;
@@ -118,14 +136,14 @@ list-style: none;
     border-radius: 3px;
     position: relative;
     top: -377px;
-    left: 780px;
+    left: 830px;
     padding-left: 15px;
     box-shadow: 0px 4px 20px rgb(0, 0, 0, 0.08);
 }
 #buttongo{
     color: #f2f2f2;
     background-color: #4A3174;
-    width: 63px;
+    padding: 10px;
     height: 40px;
     font-weight: 700;
     font-size: 17px;
@@ -134,10 +152,11 @@ list-style: none;
     border-radius: 3px;
     position: relative;
     top: -377px;
-    left: 775px;
+    left: 830px;
 }
 
-/*Headers des sections*/
+/*Headers (des sections) */
+
 .iconelivre{  
     width: 50px;
     height: 50px;
@@ -167,10 +186,10 @@ list-style: none;
 }
 #header3 span{
     color: rgb(255, 217, 0);
-}   /*Fin des headers*/
-
+}   
 
 /*Les articles de première section*/
+
 #articles{
     display: flex;
     flex-direction: row;
@@ -216,9 +235,10 @@ list-style: none;
     line-height: 19px;
     margin-bottom: 20px;
     margin-left: 20px;
-}   /*Fin de première section*/
+}  
 
 /*Les articles de deuxième section*/
+
 #articles2{
     margin-left: 113px;
     display: flex;
@@ -290,10 +310,10 @@ list-style: none;
     flex: 0 0 680px;
     position: relative;
     right: 305px;
-}   /*Fin de deuxième section*/
-
+}   
 
 /*Footer*/
+
 footer{
     background-color: #4a3174;
     height: 320px;
@@ -364,7 +384,17 @@ i{
     background-color: #4a3174;
     font-size: x-small;
 }
-
+@media  screen and (max-width: 950px){
+    #form label{
+        left: 550px;
+    }
+    #rechercher{
+        left: 550px;
+    }
+    #buttongo{
+        left: 550px;
+    }
+}
 @media  screen and (max-width: 800px){
     #article3{
        display: none;
@@ -372,18 +402,21 @@ i{
     #promotions{
         display: none;
     }
+    #form label{
+        top: -260px;
+        left: 170px;
+    }
+    #form:focus-within label, #form.active-input label{
+        top: -300px;
+    }
+    
     #rechercher{
-        width: 250px;
-        position: relative;
         top: -280px;
-        left: 133px;
-        padding-left: 15px;
+        left: 170px;
     }
     #buttongo{
-        position: relative;
         top: -280px;
-        left: 130px;
-        background-color: #4a3174;
+        left: 170px;
     }
     #articles article{ 
         width: 253px;
@@ -391,17 +424,17 @@ i{
         margin-top:20px ;
         background-color: #ffffff;
         box-shadow: 0px 4px 20px rgba(61, 61, 61, 0.08);
-     }
-     #articles img{    /*livres vert et rouge*/
+    }
+    #articles img{    /*livres vert et rouge*/
         width: 220px;
         height: 315px;
         margin: 20px;
-     }
-     #articles #imagelivre{   /*livre avec des fleures*/
+    }
+    #articles #imagelivre{   /*livre avec des fleures*/
         width: 220px;
         height: 315px;
         margin: 20px;
-     }
+    }
     #articles2 article{
         width: 500px;
         height: 300px;
@@ -428,6 +461,19 @@ i{
     }
 }
 @media screen  and (max-width: 690px){
+    #form label{
+        top: -200px;
+    }
+    #form:focus-within label, #form.active-input label{
+        top: -240px;
+    }
+    
+    #rechercher{
+        top: -220px;
+    }
+    #buttongo{
+        top: -220px;
+    }
     #nav1, #nav2{
         display: none;
     }
