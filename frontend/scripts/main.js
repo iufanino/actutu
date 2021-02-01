@@ -70,7 +70,7 @@ function afficheRecommandations() {
 
     imageHTML.src = livre.image;
     titreHTML.innerText = livre.titre;
-    //auteurHTML.innerText = livre.auteur;
+    auteurHTML.innerText = livre.auteur;
     prixHTML.innerText = livre.prix + '€';
 
     //console.log(livre.auteur)
@@ -103,8 +103,7 @@ function afficheLivres(prixMax) {
 }
 
 function rechercheLivres() {
-    console.log('test')
-    const recherche =  'cuisine';
+    let recherche ;
     fetch(`https://www.googleapis.com/books/v1/volumes?q=${'recherche'}`)
     // .then(reponse => reponse.json()) 
     .then((reponse) => { 
