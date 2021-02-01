@@ -1,27 +1,3 @@
-/////// Menu Burger ////////////////////
-const menuBurger = document.getElementById("burger");
-const navbar1 = document.getElementById("nav1");
-const navbar2 = document.getElementById("nav2");
-
-
-menuBurger.addEventListener('click',()=>{ 
-    navbar1.classList.toggle('active');
-    navbar2.classList.toggle('active');
-}) 
-//////////////////////////////////////////
-
-//////// Animation Input /////////////////
-const searchInput = document.querySelector('#rechercher');
-
-searchInput.addEventListener('input', function (e) {
-    if(e.target.value !== "") {
-        e.target.parentNode.classList.add('active-input');
-    } else if (e.target.value === "") {
-        e.target.parentNode.classList.remove('active-input');
-    }
-})
-//////////////////////////////////////////
- 
 const tableauLivres= [
     {  titre: "La peau de chagrin",
        auteur: "Honoré de Balzac" ,
@@ -71,30 +47,30 @@ function afficheRecommandations() {
      })
 
    let count = 0;
-   for (let livre of tableauLivres){
+   for (let livre of tableauLivres) {
        if (count++ >= 2) {
            break;
        }
        console.log(livre);
    }
 
-   for (let i=0; (i < tableauLivres.length & i < 3); i++){
+   for (let i=0; (i < tableauLivres.length & i < 3); i++) {
        let livre = tableauLivres[Math.floor(Math.random()*4)]
        console.log(livre)
    }*/
 
    tableauLivres.sort(function (a, b) {return 0.5 - Math.random() })
-   for (let i=0; (i < tableauLivres.length & i < 3); i++){
+   for (let i=0; i < tableauLivres.length; i++) {
     let livre = tableauLivres[i]
 
-    const imageHTML = document.querySelector('.image');
-    const titreHTML = document.querySelector('.titre');
-    const auteurHTML = document.querySelector('.auteur');
-    const prixHTML = document.querySelector('.prix');
+    const imageHTML = document.querySelectorAll('.image')[i];
+    const titreHTML = document.querySelectorAll('.titre')[i];
+    const auteurHTML = document.querySelectorAll('.auteur')[i];
+    const prixHTML = document.querySelectorAll('.prix')[i];
 
     imageHTML.src = livre.image;
     titreHTML.innerText = livre.titre;
-    auteurHTML.innerText = livre.auteur;
+    //auteurHTML.innerText = livre.auteur;
     prixHTML.innerText = livre.prix + '€';
 
     //console.log(livre.auteur)
@@ -103,18 +79,18 @@ function afficheRecommandations() {
 
 function afficheLivres(prixMax) {
 
-   for (let i=0; i < tableauLivres.length; i++){
+   for (let i=0; i < tableauLivres.length; i++) {
     let livre = tableauLivres[i]
 
     if(livre.prix >= prixMax) {
        continue;
     }
 
-    const imageHTML = document.querySelectorAll('.image');
-    const titreHTML = document.querySelectorAll('.titre');
-    const auteurHTML = document.querySelectorAll('.auteur');
-    const prixHTML = document.querySelectorAll('.prix');
-    const descriptionHTML = document.querySelectorAll('.text')
+    const imageHTML = document.querySelectorAll('.image')[i];
+    const titreHTML = document.querySelectorAll('.titre')[i];
+    const auteurHTML = document.querySelectorAll('.auteur')[i];
+    const prixHTML = document.querySelectorAll('.prix')[i];
+    const descriptionHTML = document.querySelectorAll('.text')[i];
 
     imageHTML.src = livre.image;
     titreHTML.innerText = livre.titre;
@@ -126,9 +102,10 @@ function afficheLivres(prixMax) {
    }
 }
 
-/*function rechercheLivres(recherche) {
-
-    fetch('https://www.googleapis.com/books/v1/volumes?q=${'recherche'}')
+function rechercheLivres() {
+    console.log('test')
+    const recherche =  'cuisine';
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${'recherche'}`)
     // .then(reponse => reponse.json()) 
     .then((reponse) => { 
         return reponse.json();  
@@ -137,7 +114,9 @@ function afficheLivres(prixMax) {
     .then((data) => {   
         const livresAPI = data.items;  
         tableauLivres.splice(0, tableauLivres.length)
+      
         livresAPI.forEach(livre => {
+
             const livreFormatte = {
                 titre: livre.volumeInfo?.title,
                 auteur:  livre.volumeInfo?.authors?.join(', '),
@@ -158,12 +137,10 @@ function initSubmitForm() {
         ev.preventDefault()
         rechercheLivres(document.querySelector('#rechercher').value)
     })
-}*/
+}
 
 function start() {
-    //initSubmitForm()
-    //rechercheLivres();
-    afficheRecommandations();
-    afficheLivres(20);
+    initSubmitForm()
+    rechercheLivres();
 }
 
