@@ -59,52 +59,56 @@ function afficheRecommandations() {
        console.log(livre)
    }*/
 
-   tableauLivres.sort(function (a, b) {return 0.5 - Math.random() })
-   for (let i=0; i < tableauLivres.length; i++) {
-    let livre = tableauLivres[i]
+    tableauLivres.sort(function (a, b) {return 0.5 - Math.random() })
 
-    const imageHTML = document.querySelectorAll('.image')[i];
-    const titreHTML = document.querySelectorAll('.titre')[i];
-    const auteurHTML = document.querySelectorAll('.auteur')[i];
-    const prixHTML = document.querySelectorAll('.prix')[i];
+    for (let i=0; i < tableauLivres.length; i++) {
 
-    imageHTML.src = livre.image;
-    titreHTML.innerText = livre.titre;
-    auteurHTML.innerText = livre.auteur;
-    prixHTML.innerText = livre.prix + '€';
+        let livre = tableauLivres[i]
 
-    //console.log(livre.auteur)
-   }
+        const imageHTML = document.querySelectorAll('.image')[i];
+        const titreHTML = document.querySelectorAll('.titre')[i];
+        const auteurHTML = document.querySelectorAll('.auteur')[i];
+        const prixHTML = document.querySelectorAll('.prix')[i];
+
+        imageHTML.src = livre.image;
+        titreHTML.innerText = livre.titre;
+        auteurHTML.innerText = livre.auteur;
+        prixHTML.innerText = livre.prix + '€';
+
+        //console.log(livre.auteur)
+    }
 }
 
 function afficheLivres(prixMax) {
 
-   for (let i=0; i < tableauLivres.length; i++) {
-    let livre = tableauLivres[i]
+    for (let i=0; i < tableauLivres.length; i++) {
+        let livre = tableauLivres[i]
 
-    if(livre.prix >= prixMax) {
-       continue;
+        if(livre.prix >= prixMax) {
+            continue;
+        }
+
+        const imageHTML = document.querySelectorAll('.image')[i];
+        const titreHTML = document.querySelectorAll('.titre')[i];
+        const auteurHTML = document.querySelectorAll('.auteur')[i];
+        const prixHTML = document.querySelectorAll('.prix')[i];
+        const descriptionHTML = document.querySelectorAll('.text')[i];
+
+        imageHTML.src = livre.image;
+        titreHTML.innerText = livre.titre;
+        auteurHTML.innerText = livre.auteur;
+        prixHTML.innerText = livre.prix + '€';
+        descriptionHTML.innerText = livre.resume;
+
+        //console.log(livre.titre)
     }
-
-    const imageHTML = document.querySelectorAll('.image')[i];
-    const titreHTML = document.querySelectorAll('.titre')[i];
-    const auteurHTML = document.querySelectorAll('.auteur')[i];
-    const prixHTML = document.querySelectorAll('.prix')[i];
-    const descriptionHTML = document.querySelectorAll('.text')[i];
-
-    imageHTML.src = livre.image;
-    titreHTML.innerText = livre.titre;
-    auteurHTML.innerText = livre.auteur;
-    prixHTML.innerText = livre.prix + '€';
-    descriptionHTML.innerText = livre.resume;
-
-    //console.log(livre.titre)
-   }
 }
 
 function rechercheLivres() {
-    let recherche ;
-    fetch(`https://www.googleapis.com/books/v1/volumes?q=${'recherche'}`)
+    
+    let input = document.querySelector('#rechercher').value;
+
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=${input}`)
     // .then(reponse => reponse.json()) 
     .then((reponse) => { 
         return reponse.json();  
@@ -113,7 +117,7 @@ function rechercheLivres() {
     .then((data) => {   
         const livresAPI = data.items;  
         tableauLivres.splice(0, tableauLivres.length)
-      
+        //console.log(livresAPI);
         livresAPI.forEach(livre => {
 
             const livreFormatte = {
@@ -125,9 +129,9 @@ function rechercheLivres() {
             }
             tableauLivres.push(livreFormatte)
         });
-        afficheRecommandations();
-        afficheLivres(20);
     })
+    afficheRecommandations();
+    afficheLivres(20);
 }
 
 function initSubmitForm() {

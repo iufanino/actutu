@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     background-color: #fafafa;
-    font-family: roboto;
+    font-family: 'Roboto',  sans-serif;
 }
 
 /*Navbar*/
@@ -30,7 +32,7 @@
     justify-content: space-around;
 }
 #nav1 ul li, #nav2 ul li{
-list-style: none;
+    list-style: none;
 }
 #nav1 ul li a, #nav2 ul li a{
     text-decoration: none;
@@ -120,7 +122,8 @@ list-style: none;
     left: 830px;
     width: 150px;
 }
-#form:focus-within label, #form.active-input label{
+#form:focus-within label, 
+#form.active-input label{
     top: -400px;
     padding-left: 5px;
 }
@@ -378,7 +381,6 @@ footer li :hover{
     box-shadow: 0px 4px 20px rgba(207, 207, 207, 0.1);
     height: 28px;
     border-radius: 3px;
-    width: 200px;
 }
 i{
     background-color: #4a3174;
@@ -461,19 +463,22 @@ i{
     }
 }
 @media screen  and (max-width: 690px){
+
     #form label{
-        top: -200px;
+        top: -260px;
     }
     #form:focus-within label, #form.active-input label{
-        top: -240px;
+        top: -300px;
     }
-    
     #rechercher{
-        top: -220px;
+        top: -280px;
+        left: 170px;
     }
     #buttongo{
-        top: -220px;
+        top: -280px;
+        left: 170px;
     }
+  
     #nav1, #nav2{
         display: none;
     }
