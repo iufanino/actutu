@@ -463,7 +463,6 @@ i{
     }
 }
 @media screen  and (max-width: 690px){
-
     #form label{
         top: -260px;
     }
@@ -478,7 +477,6 @@ i{
         top: -280px;
         left: 170px;
     }
-  
     #nav1, #nav2{
         display: none;
     }

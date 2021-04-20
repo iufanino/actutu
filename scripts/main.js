@@ -82,6 +82,7 @@ function afficheRecommandations() {
 function afficheLivres(prixMax) {
 
     for (let i=0; i < tableauLivres.length; i++) {
+
         let livre = tableauLivres[i]
 
         if(livre.prix >= prixMax) {
@@ -134,7 +135,7 @@ function rechercheLivres() {
     afficheLivres(20);
 }
 
-function initSubmitForm() {
+function submitForm() {
  
     document.querySelector('#form').addEventListener('submit', (ev) => {
         ev.preventDefault()
@@ -143,7 +144,7 @@ function initSubmitForm() {
 }
 
 function start() {
-    initSubmitForm()
+    submitForm()
     rechercheLivres();
 }
 
